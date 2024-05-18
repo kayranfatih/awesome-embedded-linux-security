@@ -38,7 +38,7 @@ Thanks to all [contributors](https://github.com/kayranfatih/awesome-embedded-lin
   - [Disabled/Restricted Access](#disabledrestricted-access)
   - [Signed Kernel Modules](#signed-kernel-modules)
   - [IMA Secure Boot Rules](#ima-secure-boot-rules)
-- [**Books**](#Books#)
+- [**Books**](#Books)
 
 ## Root of Trust
 - [OpenTitan](https://opentitan.org/) - OpenTitan is the first open source project building a transparent, high-quality reference design and integration guidelines for silicon root of trust (RoT) chips
