@@ -5,26 +5,54 @@ A collection of awesome tools, books, resources, software, documents and cool st
 Thanks to all [contributors](https://github.com/kayranfatih/awesome-embedded-linux-security/graphs/contributors). The goal is to build community-driven collection of  well-known resources.
 
 ## Contents
+- [**Root of Trust**](#Root-of-Trust)
+- [**Trusted Execution Environment (TEE)**](#Trusted-Execution-Environment-(TEE))
+- [**Secure Boot**](#Secure-Boot)
+- [**Bootloaders**](#Bootloaders)
+- [**Access Control and Kernel modules**](#Access-Control-and-Kernel-modules)
+- [**Operating Systems**](#Operating-Systems)
+- [**Container Security**](#Container-Security)
+  - [Articles](#Articles)
+  - [Tools](#Tools)
+  - [Best Practices](#Best-Practices)
+  - [Guides and Documentation](#Guides-and-Documentation)
+- [**Useful Websites**](#Useful-Websites)
+- [**Host-based Intrusion Detection Systems**](#Host-based-Intrusion-Detection-Systems)
+- [**Kernel Memory Protection**](#kernel-memory-protection)
+- [**Return Oriented Programming**](#return-oriented-programming)
+- [**Data Integrity and Security**](#data-integrity-and-security)
+  - [Block Level Encryption](#block-level-encryption)
+  - [Filesystem Level Encryption](#filesystem-level-encryption)
+  - [Usage and Implementation Details](#usage-and-implementation-details)
+  - [Considerations](#considerations)
+- [**Hardening Yocto**](#hardening-yocto)
+- [**Linux Firewalls**](#linux-firewalls)
+- [**Testing Linux Software for Security**](#testing-linux-software-for-security)
+  - [Static Analysis](#static-analysis)
+  - [Dynamic Analysis](#dynamic-analysis)
+  - [Fuzz-testing](#fuzz-testing)
+  - [Linux Kernel Fuzzers](#linux-kernel-fuzzers)
+  - [Sanitizers](#sanitizers)
+  - [Cyclomatic Complexity](#cyclomatic-complexity)
+- [**Lockdown**](#lockdown)
+  - [Disabled/Restricted Access](#disabledrestricted-access)
+  - [Signed Kernel Modules](#signed-kernel-modules)
+  - [IMA Secure Boot Rules](#ima-secure-boot-rules)
 
-DICE, TPM, TCG
-
-## Root of Trusts 
+## Root of Trust
 - [OpenTitan](https://opentitan.org/) - OpenTitan is the first open source project building a transparent, high-quality reference design and integration guidelines for silicon root of trust (RoT) chips
 - [Project Cerberus](https://github.com/Azure/Project-Cerberus) - Project Cerberus is designed to be a hardware root of trust (RoT) for server platforms. It provides functionality to enforce secure boot for firmware on devices with or without intrinsic secure boot capabilities. It also provides a mechanism to securely attest to the state of the device firmware.
+- [Trusted Platform Module (TPM)](https://trustedcomputinggroup.org/resource/trusted-platform-module-tpm-summary/) - TPM (Trusted Platform Module) is a computer chip (microcontroller) that can securely store artifacts used to authenticate the platform (your PC or laptop). These artifacts can include passwords, certificates, or encryption keys. A TPM can also be used to store platform measurements that help ensure that the platform remains trustworthy.
+- [Device Identifier Composition Engine (DICE)](https://trustedcomputinggroup.org/what-is-a-device-identifier-composition-engine-dice/) - DICE is a hardware Root-of-Trust (RoT) used to protect the devices and components where a TPM would be impractical or infeasible. When a TPM is present, DICE is used to protect communication with the TPM and provides the Root of Trust for Measurement (RTM) for the platform. DICE was designed to close critical gaps in infrastructure and help to establish safeguarding measures for devices. The DICE RoT can also be easily integrated into existing infrastructure, with the architecture being flexible and interoperable with existing security standards.
   
-## TEE
-
+## Trusted Execution Environment (TEE)
 - [ARM TrustZone](https://www.arm.com/technologies/trustzone-for-cortex-m) - TrustZone technology for Arm Cortex-M processors enables robust levels of protection at all cost points for IoT devices. The technology reduces the potential for attack by isolating the critical security firmware, assets and private information from the rest of the application.
 - [RISC-V Keystone](https://keystone-enclave.org/) - Keystone is an open-source project for building customizable trusted execution environments (TEEs) based on RISC-V for various platforms and use cases. 
 - [OP-TEE](https://www.trustedfirmware.org/projects/op-tee/) - OP-TEE is an open-source TEE designed for ARM TrustZone. It provides a secure and efficient environment for running trusted applications on ARM processors, implementing the GlobalPlatform TEE system architecture and APIs.
 - [Intel SGX (Software Guard Extensions)](https://github.com/intel/linux-sgx) - Intel SGX is a set of security-related instruction codes that are built into modern Intel CPUs. It allows applications to create secure enclaves for code and data. While SGX itself is not open-source, there are open-source SDKs and tools for developing SGX applications.
 - [AMD SEV (Secure Encrypted Virtualization](https://github.com/AMDESE/AMDSEV) -  AMD SEV is a technology that provides encryption for virtual machine memory. It helps protect VMs from attacks and unauthorized access. While SEV is a hardware feature, there are open-source tools and frameworks for leveraging SEV in virtualized environments.
 
-## Links 
-https://www.bytesnap.com/news-blog/embedded-linux-security-secure-iot-devices/
-
 ## Secure Boot
-
 - [UEFI Secure Boot](https://uefi.org/specifications) - UEFI specifications, including the Secure Boot protocol.
 - [Secure Boot on ARM](https://static.docs.arm.com/101028/0301/arm_firmware_security_requirements_whitepaper.pdf) - ARM Firmware Security Requirements whitepaper covering Secure Boot implementation on ARM-based platforms.
 - [Linux Kernel Documentation](https://www.kernel.org/doc/html/latest/security/keys/core.html) - Linux kernel documentation on key management and integration with UEFI Secure Boot.
@@ -35,7 +63,6 @@ https://www.bytesnap.com/news-blog/embedded-linux-security-secure-iot-devices/
 - [Overview of Secure Boot in Linux](https://events.static.linuxfound.org/sites/events/files/slides/Secure%20boot%20with%20linux%20.pdf) - Presentation slides providing an overview of Secure Boot with Linux.
 
 ## Bootloaders
-
 - [U-Boot (Das U-Boot)](https://www.denx.de/wiki/U-Boot/) - U-Boot is a powerful bootloader used primarily in embedded systems. It supports a wide range of architectures and file systems, and is highly customizable for different hardware platforms.
 - [GNU GRUB GRand Unified Bootloader](https://www.gnu.org/software/grub/) - GRUB is the most popular bootloader for Linux. It supports a wide range of operating systems and file systems, and provides powerful features such as the ability to boot from network and scriptable menu entries.
 - [systemd-boot](https://www.freedesktop.org/wiki/Software/systemd/systemd-boot/) - systemd-boot (formerly known as gummiboot) is a simple UEFI boot manager that reads boot entries directly from the EFI system partition. It integrates seamlessly with systemd, making it a good choice for modern Linux systems.
@@ -45,8 +72,7 @@ https://www.bytesnap.com/news-blog/embedded-linux-security-secure-iot-devices/
 - [Petitboot](https://github.com/open-power/petitboot) - Petitboot is a Linux-based bootloader for the Power architecture, which can also be used on other architectures. It provides a flexible and powerful boot environment with support for multiple file systems and network booting.
 - [RedBoot](http://ecos.sourceware.org/redboot/) - RedBoot is a complete bootstrap environment for embedded systems. Based on the eCos Hardware Abstraction Layer, RedBoot inherits the eCos qualities of reliability, compactness, configurability, and portability.
 
-## MAC and Kernel modules
-
+## Access Control and Kernel modules
 - [SELinux (Security-Enhanced Linux)](https://selinuxproject.org/page/Main_Page) - Linux kernel security module that provides a mechanism for supporting access control security policies, including mandatory access control (MAC). It helps to confine user programs and system services to the minimum amount of privilege they require to do their jobs.
 - [AppArmor](https://www.kernel.org/doc/html/v4.15/admin-guide/LSM/apparmor.html) - Linux Security Module that provides MAC style security extension for the Linux kernel. It allows the system administrator to restrict programs' capabilities with per-program profiles.
 - [Tomoyo](https://tomoyo.osdn.jp/) - Linux security module that implements mandatory access control policies. It focuses on ease of use and learning mode, which helps to create security policies automatically based on the behavior of the system.
@@ -58,18 +84,7 @@ https://www.bytesnap.com/news-blog/embedded-linux-security-secure-iot-devices/
 - [Seccomp (Secure Computing Mode)](https://www.kernel.org/doc/html/latest/userspace-api/seccomp.html) - Linux kernel feature that allows a process to make a one-way transition into a restricted state where it can only make a specified set of system calls. This reduces the kernel attack surface.
 - [SMACK (Simplified Mandatory Access Control Kernel)](https://www.kernel.org/doc/html/latest/security/Smack.html) - Linux security module that provides simplified mandatory access control. It implements a rule-based access control mechanism to protect processes and objects on the system.
 
-## Init systems
-
-- [dumb-init](https://github.com/Yelp/dumb-init) - A minimal init system for Linux containers.
-- [finit](http://troglobit.com/projects/finit/) - Fast init for Linux systems.
-- [minit](http://www.fefe.de/minit/) - A small yet feature-complete init.
-- [OpenRC](https://github.com/OpenRC/openrc) - Dependency-based init system that works with the system-provided init program.
-- [runit](http://smarden.org/runit/) - A UNIX init scheme with service supervision.
-- [systemd](https://github.com/systemd/systemd) - The systemd System and Service Manager.
-- [upstart](http://upstart.ubuntu.com/) - Event-based init system.
-
 ## Operating Systems
-
 - [OpenWRT](https://openwrt.org/) - The OpenWrt Project is a Linux operating system targeting embedded devices. Instead of trying to create a single, static firmware, OpenWrt provides a fully writable filesystem with package management.
 - [Yocto Project](https://www.yoctoproject.org/) - A project that provides templates, tools, and methods to create custom Linux-based systems for embedded products, regardless of hardware architecture.
 - [Buildroot](https://buildroot.org/) - A simple, efficient, and easy-to-use tool to generate embedded Linux systems through cross-compilation.
@@ -110,174 +125,127 @@ https://www.bytesnap.com/news-blog/embedded-linux-security-secure-iot-devices/
 - [Container Security with AWS](https://aws.amazon.com/containers/security/) - AWS documentation on securing containerized applications on Amazon ECS and EKS.
 - [Google Kubernetes Engine (GKE) Security](https://cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster) - Google Cloud documentation on hardening your Google Kubernetes Engine (GKE) clusters.
 
-### Community
-- [Docker Community Forums](https://forums.docker.com/c/security/19) - Official Docker community forums for discussing container security topics and seeking assistance.
-- [Kubernetes Slack](https://slack.k8s.io/) - Join the Kubernetes Slack workspace to engage with the community and discuss security-related topics in real-time.
-- [Container Security Reddit](https://www.reddit.com/r/ContainerSecurity/) - Subreddit dedicated to discussions about container security, vulnerability management, and best practices.
-
-
-## Kernel Memory Protection
-- []()
-- CONFIG_STRICT_KERNEL_RWX, CONFIG_STRICT_MODULE_RWX, CONFIG_DEBUG_ALIGN_RODATA : https://www.kernel.org/doc/html/v4.19/security/self-protection.html#strict-kernel-memory-permissions
-- KASLR : https://www.kernel.org/doc/html/v4.19/security/self-protection.html#kernel-address-space-layout-randomization-kaslr (CONFIG_RANDOMIZE_BASE)
-- Stack Canary - CONFIG_STACK_PROTECTOR : https://www.kernel.org/doc/html/v4.19/security/self-protection.html#canaries-blinding-and-other-secrets
-- Heap Memory : chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://events.static.linuxfound.org/sites/events/files/slides/slaballocators.pdf SLUB best for security
-
+## Useful Websites
+- [Trusted Computing Group (TCG)](https://trustedcomputinggroup.org/) - Through open standards and specifications, Trusted Computing Group (TCG) enables secure computing. Benefits of TCG technologies include protection of business-critical data and systems, secure authentication and strong protection of user identities, and the establishment of strong machine identity and network integrity. Trusted hardware and applications reduce enterprise total cost of ownership and support regulatory compliance.
 
 ## Host-based Intrusion Detection Systems
-
+- [OSSEC](https://www.ossec.net/) - An open-source host-based intrusion detection system that performs log analysis, file integrity checking, rootkit detection, and real-time alerting.
+- [Wazuh](https://wazuh.com/) - A fork of OSSEC with additional features and enhancements, providing security monitoring, incident response, and compliance capabilities.
+- [Tripwire](https://www.tripwire.com/) - A commercial HIDS solution that performs file integrity monitoring, change detection, and policy-based alerting for embedded Linux systems.
+- [Samhain](http://www.la-samhna.de/samhain/) - An open-source HIDS that provides file integrity checking, system monitoring, and rootkit detection for embedded Linux environments.
+- [chrootkit](http://www.chkrootkit.org/) - chkrootkit is a tool to locally check for signs of a rootkit.
 - [AIDE](https://aide.github.io/) - Advanced Intrusion Detection Environment, a file and directory integrity checker.
 - [afick](http://afick.sourceforge.net/) - Another File Integrity Checker, monitors changes on the file system and detects intrusions.
-- [chrootkit](http://www.chkrootkit.org/) - Checks for rootkits.
 - [Open Source Tripwire](https://github.com/Tripwire/tripwire-open-source) - Security and data integrity tool for monitoring and alerting on file & directory changes.
-- [OSSEC](https://www.ossec.net/) - The World’s Most Widely Used Host-based Intrusion Detection System.
 - [rkhunter](http://rkhunter.sourceforge.net/) - A rootkit hunter.
 - [SAMHAIN](https://la-samhna.de/samhain/) - Provides file integrity checking and log file monitoring/analysis, as well as rootkit detection, port monitoring, detection of rogue SUID executables, and hidden processes. 
 
-
-![image](https://github.com/kayranfatih/awesome-embedded-linux-security/assets/18244664/5562d92e-3dd3-470e-97aa-abd33ea56120)
-
+## Kernel Memory Protection
+- [AddressSanitizer (ASan)](https://github.com/google/sanitizers/wiki/AddressSanitizer) - A runtime memory error detector that finds buffer overflow and use-after-free bugs in C/C++ programs.
+- [KASAN (Kernel Address Sanitizer)](https://www.kernel.org/doc/html/latest/dev-tools/kasan.html) - A dynamic memory error detector for the Linux kernel, similar to AddressSanitizer but tailored for kernel code.
+- [KPTR_CHECK (Kernel Pointer Authentication)](https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html) - A kernel boot parameter that enables pointer authentication checks for kernel addresses to prevent kernel pointer leaks.
+- [Strict Kernel Memory Permissions](https://www.kernel.org/doc/html/v4.19/security/self-protection.html#strict-kernel-memory-permissions) - Enforces strict permissions on kernel and module memory regions to prevent data execution and memory corruption vulnerabilities.
+  - Config options: `CONFIG_STRICT_KERNEL_RWX`, `CONFIG_STRICT_MODULE_RWX`, `CONFIG_DEBUG_ALIGN_RODATA`
+- [Kernel Address Space Layout Randomization (KASLR)](https://www.kernel.org/doc/html/v4.19/security/self-protection.html#kernel-address-space-layout-randomization-kaslr) - Randomizes the base address of the kernel's virtual address space to mitigate memory-based attacks.
+  - Config option: `CONFIG_RANDOMIZE_BASE`
+- [Stack Canary](https://www.kernel.org/doc/html/v4.19/security/self-protection.html#canaries-blinding-and-other-secrets) - Description: Inserts a canary value before the return address on the stack to detect buffer overflow attacks.
+  - Config option: `CONFIG_STACK_PROTECTOR`
+- Heap Memory Security - [SLUB Allocator](https://events.static.linuxfound.org/sites/events/files/slides/slaballocators.pdf) - SLUB allocator is recommended for security due to its improved security features compared to other memory allocators like SLAB and SLOB.
 
 ## Return Oriented Programming 
-- [ROPgadget](https://github.com/JonathanSalwan/ROPgadget) - This tool lets you search your gadgets on your binaries to facilitate your ROP exploitation. ROPgadget supports ELF/PE/Mach-O/Raw formats on x86, x64, ARM, ARM64, PowerPC, SPARC, MIPS, RISC-V 64, and RISC-V Compressed architectures
+Return-Oriented Programming (ROP) is an advanced exploitation technique used in software security research to construct malicious payloads by chaining together short sequences of code fragments called "gadgets" from existing program code. ROP enables attackers to execute arbitrary code even in the presence of modern security mitigations like DEP and ASLR.
+
+- [ROPgadget](https://github.com/JonathanSalwan/ROPgadget) - A command-line tool for finding gadgets and building ROP chains.
+- [ROPInjector](https://github.com/NytroRST/ROPInjector) - A tool for generating ROP payloads and injecting them into target processes.
+- [ROPShell](https://github.com/alpha1ab/ROPShell) - A Python script to assist in the exploitation of buffer overflows using ROP techniques.
+- [RP++](https://github.com/0vercl0k/rp) - A ROP gadget discovery tool that parses binaries and provides information about available gadgets.
 - [Ropper](https://github.com/sashs/ropper) - Display information about files in different file formats and find gadgets to build rop chains for different architectures (x86/x86_64, ARM/ARM64, MIPS, PowerPC, SPARC64)
 - [Pwntools](https://github.com/Gallopsled/pwntools) - pwntools is a CTF framework and exploit development library. Written in Python, it is designed for rapid prototyping and development, and intended to make exploit writing as simple as possible
-## Data Integrity and Security
-- dm-verity
-- fs-verity
-- dm-crypt
-- Block level 
-CONFIG_BLK_INLINE_ENCRYPTION
-CONFIG_DM_CRYPT (dm-crypt)
-Requires https://gitlab.com/cryptsetup/cryptsetup/
-- fscrypt
-Filesystem level
-CONFIG_ECRYPT_FS (ecryptfs stacking filesystem)
-CONFIG_FS_ENCRYPTION (fscrypt)
-built into ext4, F2FS, UBIFS
-user-space tools for embedded systems at https://github.com/google/fscryptctl;
-More information at https://www.kernel.org/doc/html/latest/filesystems/fscrypt.htm
--Fscrypt used for Android and ChromeOS. Encrypts at the directory level.
-eMMC operates at the block level
-Dm-crypt protects all metadata (including xattr). Fscrypt only encrypts filenames.
-None of these provide integrity
 
-## Containers and sandboxing
-Seccomp
-Seccomp-bpf - seccomp-bpf is an extension to seccomp that allows bpf filtering of syscalls
-Landlock LSM - Landlock is a stackable LSM designed to help with the creation of security sandboxes, Limits the security impact of vulnerabilities in userspace applications https://www.kernel.org/doc/html/latest/userspace-api/landlock.html
-Filesystem binding
-Linux containers
-Linux cgroups and namespaces
+## Data Integrity and Security
+### Block Level Encryption
+- [dm-verity](https://www.kernel.org/doc/html/latest/admin-guide/device-mapper/verity.html) - A Linux kernel feature providing transparent integrity checking of block devices.
+- [fs-verity](https://www.kernel.org/doc/html/latest/filesystems/fsverity.html) - A filesystem-level integrity checking feature that works with read-only files and directories.
+- [dm-crypt](https://gitlab.com/cryptsetup/cryptsetup/) - A disk encryption mechanism in the Linux kernel, providing block-level encryption for data at rest.
+  - Config Option: `CONFIG_DM_CRYPT`
+- [Inline Encryption](https://www.kernel.org/doc/html/latest/block/inline-encryption.html) - A feature enabling inline encryption of data stored on block devices.
+  - Config Option: `CONFIG_BLK_INLINE_ENCRYPTION`
+
+### Filesystem Level Encryption
+- [fscrypt](https://www.kernel.org/doc/html/latest/filesystems/fscrypt.html) - A Linux kernel feature for filesystem-level encryption, supporting various filesystems including ext4, F2FS, and UBIFS.
+  - Config Options: `CONFIG_ECRYPT_FS`, `CONFIG_FS_ENCRYPTION`
+  - User-space tools: [fscryptctl](https://github.com/google/fscryptctl)
+
+### Usage and Implementation Details
+- [fscrypt Documentation](https://www.kernel.org/doc/html/latest/filesystems/fscrypt.html) - Official documentation providing details on using fscrypt for filesystem encryption.
+- [Cryptsetup Repository](https://gitlab.com/cryptsetup/cryptsetup/) - GitLab repository for cryptsetup, the user-space tool for configuring dm-crypt encryption.
+- [Android Security: File-Based Encryption](https://source.android.com/security/encryption/file-based) - Documentation on Android's usage of fscrypt for file-based encryption, used to encrypt data at the directory level.
+- [Chrome OS Security: Encrypted User Data](https://chromium.googlesource.com/chromiumos/docs/+/master/security/encrypted_user_data.md) - Overview of Chrome OS's usage of fscrypt for encrypting user data.
+
+### Considerations
+- **Integrity Protection**: Note that while dm-verity and fs-verity provide integrity checking, dm-crypt and fscrypt focus on encryption and do not provide integrity protection.
+- **Metadata Encryption**: dm-crypt protects all metadata, including extended attributes while fscrypt only encrypts filenames.
 
 ## Hardening Yocto
-Yocto security hardening
-Using cve-check
-
-## Linux Security Modules
-The Linux Security Module Framework
-Access control models
-Comparing LSMs
-The Lockdown LSM
-AppArmor
-
-## Testing Linux software for security
-Static analysis
-Dynamic analysis
-Fuzz-testing
-Sanitizers
-Complexity analysis
+- [Yocto CVE Check Documentation](https://docs.yoctoproject.org/ref-manual/system-updates.html#performing-a-security-vulnerability-scan) - Official documentation providing guidance on performing security vulnerability scans with cve-check in Yocto.
+- [Yocto Project Security Advisories](https://www.yoctoproject.org/security/) - Official security advisories and updates for the Yocto Project, complementing cve-check with additional information about vulnerabilities and patches.
 
 ## Linux firewalls
-- IPtables
-- Nftables
+- [IPtables](https://netfilter.org/documentation/index.html) - IPtables is a powerful firewall utility in Linux that allows administrators to configure rules for filtering and manipulating network packets at the kernel level. It provides granular control over network traffic based on various criteria such as source/destination IP addresses, ports, and protocols.
+- [NFTables](https://wiki.nftables.org/wiki-nftables/index.php/Main_Page) - NFTables is the successor to iptables and provides a more flexible and efficient framework for packet filtering and network address translation (NAT) in Linux. It offers a simpler syntax and improved performance compared to iptables.
+- [Firewalld](https://firewalld.org/documentation/) - Firewalld is a dynamic firewall management tool that simplifies the configuration and administration of firewalls in Linux distributions such as Fedora, CentOS, and RHEL. It provides a higher-level abstraction and a more user-friendly interface for managing firewall rules.
+- [UFW (Uncomplicated Firewall)](https://help.ubuntu.com/community/UFW) - UFW is a front-end for iptables that aims to make firewall configuration easier for novice users. It provides a simplified command-line interface and predefined application profiles for common services.
 
-## Access control models
-- Discretionary (DAC)
-- Mandatory (MAC)
-- Role-Based (RBAC)
+## Testing Linux Software for Security
+Testing Linux software for security vulnerabilities is crucial to ensure the reliability and integrity of the system. Various testing techniques and tools are available to identify and mitigate potential security risks in Linux applications. Here are some common approaches:
 
-Simplified Mandatory Access Control Kernel Support (SMACK) [CONFIG_SECURITY_SMACK] - MAC system using labels. Labels on objects are required to match task labels
-TOMOYO [CONFIG_SECURITY_TOMOYO] - MAC with process monitoring. Not well maintained
-AppArmor [CONFIG_SECURITY_APPARMOR]- MAC-like with task profiles. Tasks without profiles run with normal Linux DAC permissions.
-Yama [CONFIG_SECURITY_YAMA] - Adds ptrace restrictions
-Lockdown [CONFIG_SECURITY_LOCKDOWN_LSM] - Enforces coarse lockdown
-SELinux [CONFIG_SECURITY_SELINUX] - MAC. Heavyweight and more appropriate for PCs
-LoadPin [CONFIG_SECURITY_LOADPIN] - Ensures all kernel-loaded files (modules, firmware) all originate from same (verified, ro) filesystem
-Landlock [CONFIG_SECURITY_LANDLOCK] - Provides sandbox access control of kernel objects
+### Static Analysis
+Static analysis involves examining the source code or binaries without executing them. It helps identify potential security vulnerabilities, coding errors, and compliance issues early in the development process.
+  - [Cppcheck](http://cppcheck.sourceforge.net/) - A static analysis tool for C/C++ code.
+  - [Clang Static Analyzer](https://clang-analyzer.llvm.org/) - A static analysis tool based on Clang for C/C++ code.
+  - [FindBugs](http://findbugs.sourceforge.net/) - A static analysis tool for Java code.
+  - [Brakeman](https://brakemanscanner.org/) - A static analysis tool for Ruby on Rails applications.
+  - [Coverity](https://learn.synopsys.com/coverity) - Coverity, now part of Synopsys, is a commercial static analysis tool that provides comprehensive code analysis capabilities for identifying defects, security vulnerabilities, and compliance issues in software projects. It supports multiple programming languages and integrates seamlessly with development workflows.
+  - [Klocwork](https://www.perforce.com/manuals/klocwork) - Klocwork is a static analysis tool offered by Perforce that helps developers identify and remediate defects and security vulnerabilities in their codebase. It provides advanced analysis techniques and integrates with popular development environments to streamline the detection and resolution of issues.
+  - [SonarQube](https://www.sonarqube.org/) is an open-source platform for continuous inspection of code quality and security. While the basic version is free and open-source, SonarSource offers commercial editions with additional features and support. It supports various programming languages and provides detailed reports on code quality, security vulnerabilities, and more.
 
+### Dynamic Analysis
+Dynamic analysis involves executing the software with various inputs to observe its behavior and identify potential vulnerabilities in runtime.
+  - [Valgrind](http://valgrind.org/) - A dynamic analysis tool for memory debugging, memory leak detection, and profiling.
+  - [GDB](https://www.gnu.org/software/gdb/) - The GNU Debugger, which can be used for dynamic analysis by stepping through code, setting breakpoints, and examining memory.
+  - [Strace](https://strace.io/) - A system call tracer that captures and displays system calls made by a program.
 
-## Lockdown prevents access to a running kernel image
-The following are disabled/restricted:
-/dev/mem, /dev/kmem,/dev/kcore,/dev/ioports
-BPF
-kprobes
-debugfs
-Kernel modules must be signed or IMA appraised
+### Fuzz-testing
+Fuzz-testing involves providing invalid, unexpected, or random data as inputs to the software to uncover bugs and vulnerabilities.
+  - [American Fuzzy Lop (AFL)](https://lcamtuf.coredump.cx/afl/) - A popular fuzz-testing tool for finding security vulnerabilities in software.
+  - [AFL++](https://github.com/AFLplusplus/AFLplusplus) - AFL++ is an improved version of AFL with additional features and enhancements for better fuzz testing capabilities.
+  - [Peach Fuzzer](https://peachfuzzer.com/) - A platform for fuzz-testing software applications, protocols, and file formats.
 
-IMA requires "secure_boot" rules to the policy
+### Linux Kernel Fuzzers
+  - [Trinity](https://github.com/kernelslacker/trinity) - Trinity is a syscall fuzzer specifically designed for the Linux kernel. It generates random system calls and their arguments to stress-test the kernel's interface and uncover potential bugs.
+  - [syzkaller](https://github.com/google/syzkaller) - Syzkaller is another Linux kernel fuzzer developed by Google. It systematically generates and executes system call sequences to explore the kernel's behavior and identify vulnerabilities.
 
-## Static Analysis
-Open source tools:
-cppcheck (https://cppcheck.sourceforge.io/)
-clang static analyzer (https://clang-analyzer.llvm.org/)
+### Sanitizers
+Sanitizers are runtime tools that detect various types of bugs and vulnerabilities, such as memory errors, data races, and undefined behavior.
+  - [AddressSanitizer (ASan)](https://clang.llvm.org/docs/AddressSanitizer.html) - Detects memory corruption bugs, such as buffer overflows and use-after-free errors.
+  - [ThreadSanitizer (TSan)](https://clang.llvm.org/docs/ThreadSanitizer.html) - Detects data races and synchronization issues in multithreaded programs.
+  - [UndefinedBehaviorSanitizer (UBSan)](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html) - Detects undefined behavior in C/C++ programs.
 
-Commercial tools:
-Coverity
-Klocwork
-SonarQube
+### Cyclomatic Complexity
+Cyclomatic Complexity (CC) is a simple metric for quantifying the complexity of a program by measuring the number of linearly independent paths through its source code. It helps identify areas of code that may be difficult to understand, test, or maintain.
+  - [Lizard](https://github.com/terryyin/lizard) - Lizard is a command-line tool that analyzes code and generates reports on Cyclomatic Complexity and other metrics. It supports various programming languages, including C/C++, Java, Python, and more.
 
-## RUNTIME PROTECTIONS
+## Lockdown
+Lockdown is a security feature in the Linux kernel designed to prevent unauthorized access to a running kernel image and enhance system security. Here are the key aspects of Lockdown:
 
-## Dynamic Analysis
-Memory analysis (userspace applications):
-valgrind (good for finding allocator problems)
-AddressSanitizer (ASan) is an instrumentation tool created by Google security researchers to identify memory access problems in C and C++ programs.
+### Disabled/Restricted Access
+Lockdown disables or restricts access to certain critical kernel interfaces and resources, including:
+  - `/dev/mem`, `/dev/kmem`, `/dev/kcore`, and `/dev/ioports`: Direct memory and I/O port access are disabled to prevent unauthorized manipulation of system memory and hardware.
+  - BPF (Berkeley Packet Filter) and kprobes: These powerful kernel features are restricted to prevent potential abuse or exploitation.
+  - debugfs: Debugging interfaces are disabled to prevent unauthorized access to kernel internals.
 
-Kernel Address Sanitizer (KASAN)
-Dynamic memory error detector for the Linux kernel
-Only supported for x86_64 and arm64
-Enable with CONFIG_KASAN=y
-Works with SLAB and SLUB
-https://www.kernel.org/doc/html/v4.12/dev-tools/kasan.html
+### Signed Kernel Modules
+  - Lockdown requires that kernel modules be signed or appraised by the Integrity Measurement Architecture (IMA) before they can be loaded into the kernel. This ensures that only trusted and verified modules are allowed to execute, reducing the risk of malicious code injection.
 
-Kernel Concurrency Sanitizer (KCSAN)
-Dynamic race-condition detector for Linux kernel
-In kernel since version 5.8
-Requires >= GCC 11 or Clang 11
-Enable with CONFIG_KSCAN
-https://www.kernel.org/doc/html/latest/dev-tools/kcsan.html
-
-Kernel Electric Fence (KFENCE)
-Memory safety error detector
-Detects heap out-of-bounds access, use-after-free, invalid-free
-may be suitable for production deployment
-Enable with CONFIG_KFENCE
-https://www.kernel.org/doc/html/latest/dev-tools/kfence.html
-
-## Fuzz Testing 
-Open source: AFL (https://github.com/google/AFL)
-Commerical: BeSTORM (https://beyondsecurity.com/solutions/bestorm-dynamic-application-security-testing.html)
-The Linux Kernel has a syscall fuzzer called Trinity
-(https://github.com/kernelslacker/trinity)
- syzkaller (Linux kernel fuzzer)
-
-## Complexity analysis
-- Cyclomatic Complexity (CC) is simple metric for complexity
-- https://github.com/terryyin/lizard 
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
+### IMA Secure Boot Rules
+  - Lockdown may enforce "secure_boot" rules in the Integrity Measurement Architecture (IMA) policy. These rules ensure that only signed and trusted code is executed during the boot process, enhancing the overall security of the system.
