@@ -38,6 +38,7 @@ Thanks to all [contributors](https://github.com/kayranfatih/awesome-embedded-lin
   - [Disabled/Restricted Access](#disabledrestricted-access)
   - [Signed Kernel Modules](#signed-kernel-modules)
   - [IMA Secure Boot Rules](#ima-secure-boot-rules)
+- [**Books**](#Books#)
 
 ## Root of Trust
 - [OpenTitan](https://opentitan.org/) - OpenTitan is the first open source project building a transparent, high-quality reference design and integration guidelines for silicon root of trust (RoT) chips
@@ -249,3 +250,9 @@ Lockdown disables or restricts access to certain critical kernel interfaces and 
 
 ### IMA Secure Boot Rules
   - Lockdown may enforce "secure_boot" rules in the Integrity Measurement Architecture (IMA) policy. These rules ensure that only signed and trusted code is executed during the boot process, enhancing the overall security of the system.
+
+## Books
+- [Mastering Linux Security and Hardening]((https://www.packtpub.com/product/mastering-linux-security-and-hardening/9781803234547)) - 2022, Publisher: Packt, Author(s): Donald A. Tevault
+- [Linux Security Cookbook: Practical Security Solutions for Linux Systems](https://www.oreilly.com/library/view/linux-security-cookbook/9780596154432/) - 2021, Publisher: O'Reilly Media, Author(s): Daniel J. Barrett, Richard E. Silverman, Robert G. Byrnes
+- [Embedded Linux Systems with the Yocto Project](https://www.packtpub.com/product/embedded-linux-systems-with-the-yocto-project/9781801077712) - 2020, Publisher: Packt, Author(s): Rudolf J. Streif
+- [Linux Kernel Security](https://www.packtpub.com/product/linux-kernel-security/9781784394012) - 2019, Publisher: Packt, Author(s): John P. Baugh
