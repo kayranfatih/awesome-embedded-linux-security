@@ -6,6 +6,8 @@ Thanks to all [contributors](https://github.com/kayranfatih/awesome-embedded-lin
 
 ## Contents
 
+DICE, TPM, TCG
+
 ## Root of Trusts 
 - [OpenTitan](https://opentitan.org/) - OpenTitan is the first open source project building a transparent, high-quality reference design and integration guidelines for silicon root of trust (RoT) chips
 - [Project Cerberus](https://github.com/Azure/Project-Cerberus) - Project Cerberus is designed to be a hardware root of trust (RoT) for server platforms. It provides functionality to enforce secure boot for firmware on devices with or without intrinsic secure boot capabilities. It also provides a mechanism to securely attest to the state of the device firmware.
