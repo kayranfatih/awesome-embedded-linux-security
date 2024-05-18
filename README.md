@@ -6,7 +6,7 @@ Thanks to all [contributors](https://github.com/kayranfatih/awesome-embedded-lin
 
 ## Contents
 - [**Root of Trust**](#Root-of-Trust)
-- [**Trusted Execution Environment (TEE)**](#Trusted-Execution-Environment-(TEE))
+- [**Trusted Execution Environment (TEE)**](#Trusted-Execution-Environment-TEE)
 - [**Secure Boot**](#Secure-Boot)
 - [**Bootloaders**](#Bootloaders)
 - [**Access Control and Kernel modules**](#Access-Control-and-Kernel-modules)
@@ -30,7 +30,7 @@ Thanks to all [contributors](https://github.com/kayranfatih/awesome-embedded-lin
 - [**Testing Linux Software for Security**](#testing-linux-software-for-security)
   - [Static Analysis](#static-analysis)
   - [Dynamic Analysis](#dynamic-analysis)
-  - [Fuzz-testing](#fuzz-testing)
+  - [Fuzz Testing](#fuzz-testing)
   - [Linux Kernel Fuzzers](#linux-kernel-fuzzers)
   - [Sanitizers](#sanitizers)
   - [Cyclomatic Complexity](#cyclomatic-complexity)
@@ -215,7 +215,7 @@ Dynamic analysis involves executing the software with various inputs to observe 
   - [GDB](https://www.gnu.org/software/gdb/) - The GNU Debugger, which can be used for dynamic analysis by stepping through code, setting breakpoints, and examining memory.
   - [Strace](https://strace.io/) - A system call tracer that captures and displays system calls made by a program.
 
-### Fuzz-testing
+### Fuzz Testing
 Fuzz-testing involves providing invalid, unexpected, or random data as inputs to the software to uncover bugs and vulnerabilities.
   - [American Fuzzy Lop (AFL)](https://lcamtuf.coredump.cx/afl/) - A popular fuzz-testing tool for finding security vulnerabilities in software.
   - [AFL++](https://github.com/AFLplusplus/AFLplusplus) - AFL++ is an improved version of AFL with additional features and enhancements for better fuzz testing capabilities.
