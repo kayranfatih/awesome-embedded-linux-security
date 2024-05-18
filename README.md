@@ -150,7 +150,7 @@ Thanks to all [contributors](https://github.com/kayranfatih/awesome-embedded-lin
   - Config option: `CONFIG_RANDOMIZE_BASE`
 - [Stack Canary](https://www.kernel.org/doc/html/v4.19/security/self-protection.html#canaries-blinding-and-other-secrets) - Description: Inserts a canary value before the return address on the stack to detect buffer overflow attacks.
   - Config option: `CONFIG_STACK_PROTECTOR`
-- Heap Memory Security - [SLUB Allocator](https://events.static.linuxfound.org/sites/events/files/slides/slaballocators.pdf) - SLUB allocator is recommended for security due to its improved security features compared to other memory allocators like SLAB and SLOB.
+- [SLUB Allocator Heap Memory Security](https://events.static.linuxfound.org/sites/events/files/slides/slaballocators.pdf) - SLUB allocator is recommended for security due to its improved security features compared to other memory allocators like SLAB and SLOB.
 
 ## Return Oriented Programming 
 Return-Oriented Programming (ROP) is an advanced exploitation technique used in software security research to construct malicious payloads by chaining together short sequences of code fragments called "gadgets" from existing program code. ROP enables attackers to execute arbitrary code even in the presence of modern security mitigations like DEP and ASLR.
