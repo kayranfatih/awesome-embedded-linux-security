@@ -253,7 +253,6 @@ Lockdown disables or restricts access to certain critical kernel interfaces and 
 
 ## Books
 - [Mastering Linux Security and Hardening](https://www.packtpub.com/product/mastering-linux-security-and-hardening-third-edition/9781837630516) - 2022, Publisher: Packt, Author(s): Donald A. Tevault
-- [Linux Security Cookbook: Practical Security Solutions for Linux Systems](https://www.oreilly.com/library/view/linux-security-cookbook/9780596154432/) - 2021, Publisher: O'Reilly Media, Author(s): Daniel J. Barrett, Richard E. Silverman, Robert G. Byrnes
 - [Practical Linux Security Cookbook](https://www.amazon.de/Practical-Linux-Security-Cookbook-environment/dp/1789138396) - 2018, Publisher: Packt, Author(s): Tajinder Kalsi
-- [Embedded Linux Systems with the Yocto Project](https://www.packtpub.com/product/embedded-linux-systems-with-the-yocto-project/9781801077712) - 2020, Publisher: Packt, Author(s): Rudolf J. Streif
-- [Linux Kernel Security](https://www.packtpub.com/product/linux-kernel-security/9781784394012) - 2019, Publisher: Packt, Author(s): John P. Baugh
+- [Embedded Linux Systems with the Yocto Project](https://www.amazon.de/-/en/Embedded-Systems-Project-Software-Development/dp/0133443248) - 2020, Publisher: Packt, Author(s): Rudolf J. Streif
+
