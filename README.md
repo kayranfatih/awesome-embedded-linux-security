@@ -51,7 +51,6 @@ Thanks to all [contributors](https://github.com/kayranfatih/awesome-embedded-lin
 - [Trusted Platform Module (TPM)](https://trustedcomputinggroup.org/resource/trusted-platform-module-tpm-summary/) - TPM can securely store keys, certificates, and platform measurements for attestation and measured boot.
 - [Device Identifier Composition Engine (DICE)](https://trustedcomputinggroup.org/work-groups/dice-architectures/) - Lightweight root of trust architecture for constrained devices and firmware identity.
 - [Keylime](https://keylime.dev/) - Remote attestation framework for verifying Linux system integrity at runtime.
-- [tpm2-tools](https://github.com/tpm2-software/tpm2-tools) - Command-line tools for TPM 2.0 provisioning, measurement, sealing, and attestation.
 - [tpm2-tss](https://github.com/tpm2-software/tpm2-tss) - TPM 2.0 software stack for Linux user space integration.
 
 ## Trusted Execution Environment (TEE)
@@ -70,14 +69,10 @@ Thanks to all [contributors](https://github.com/kayranfatih/awesome-embedded-lin
 - [Linux Kernel Documentation](https://docs.kernel.org/security/keys/core.html) - Linux kernel documentation on key management and integration with UEFI Secure Boot.
 - [Secure Boot with OpenEmbedded/Yocto](https://docs.yoctoproject.org/5.2.2/dev-manual/securing-images.html) - Yocto Project documentation on securing images and integrating secure boot support.
 - [Introduction to UEFI Secure Boot](https://www.happyassassin.net/2014/01/25/uefi-boot-how-does-that-actually-work-then/) - In-depth overview of how UEFI Secure Boot works.
-- [Implementing Secure Boot in Embedded Linux](https://blog.codecentric.de/en/2019/03/implementing-secure-boot-linux-embedded/) - Practical guide on implementing secure boot in embedded Linux systems.
-- [Secure Boot for Embedded Devices](https://www.nxp.com/docs/en/application-note/AN12167.pdf) - NXP application note covering secure boot design choices for embedded devices.
-- [Overview of Secure Boot in Linux](https://events.static.linuxfound.org/sites/events/files/slides/Secure%20boot%20with%20linux%20.pdf) - Linux Foundation slides providing a concise secure boot overview.
 - [U-Boot Verified Boot](https://docs.u-boot.org/en/latest/usage/fit/verified-boot.html) - FIT signature verification for authenticated boot chains.
 - [U-Boot Measured Boot](https://docs.u-boot.org/en/latest/usage/measured_boot.html) - Measured boot support for TPM-backed trust chains.
 - [MCUboot](https://docs.mcuboot.com/) - Secure bootloader commonly used with Linux-capable systems that also ship MCU companions.
 - [fwupd](https://fwupd.org/) - Linux firmware update ecosystem with signed metadata and device plugin support.
-- [Linux Vendor Firmware Service (LVFS)](https://lvfs.readthedocs.io/en/latest/) - Signed firmware distribution service used by the fwupd ecosystem.
 
 ## Bootloaders
 - [U-Boot](https://docs.u-boot.org/) - Powerful bootloader used primarily in embedded systems, with broad architecture support and current upstream documentation.
@@ -130,16 +125,13 @@ Thanks to all [contributors](https://github.com/kayranfatih/awesome-embedded-lin
 ## Container Security
 
 ### Foundations and Guidance
-- [Container Security: A Comprehensive Overview](https://www.redhat.com/en/topics/containers/what-is-container-security) - Overview of container security challenges and best practices.
-- [Top 10 Container Security Risks](https://www.cisecurity.org/blog/top-10-container-security-risks/) - Summary of common security risks associated with container deployments.
-- [Securing Containerized Applications](https://blog.aquasec.com/kubernetes-security-best-practices) - Best practices for securing containerized applications in Kubernetes environments.
 - [Introduction to Docker Security](https://www.docker.com/blog/docker-security-best-practices/) - Docker's guide to security best practices for build and deployment.
 - [Docker Security Documentation](https://docs.docker.com/engine/security/) - Official Docker security documentation.
 - [Kubernetes Security Guide](https://kubernetes.io/docs/concepts/security/) - Official Kubernetes security concepts and hardening guidance.
 
 ### Image Scanning and Supply Chain
 - [Clair](https://github.com/quay/clair) - Vulnerability scanner for container images.
-- [Trivy](https://trivy.dev/latest/) - Scanner for container images, OS packages, IaC, secrets, and SBOM workflows.
+- [Trivy](https://trivy.dev/) - Scanner for container images, OS packages, IaC, secrets, and SBOM workflows.
 - [Grype](https://github.com/anchore/grype) - Vulnerability scanner for container images and SBOM inputs.
 - [Syft](https://github.com/anchore/syft) - SBOM generator for container images and file systems.
 
@@ -154,8 +146,7 @@ Thanks to all [contributors](https://github.com/kayranfatih/awesome-embedded-lin
 - [CIS Docker Benchmark](https://www.cisecurity.org/benchmark/docker/) - Comprehensive guide to securing Docker containers.
 - [NSA/CISA Kubernetes Hardening Guidance](https://www.nsa.gov/Press-Room/Digital-Media-Center/Document-Gallery/igphoto/2003066362/) - Practical hardening guidance for securing Kubernetes clusters and workloads.
 - [OWASP Docker Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html) - Concise hardening guidance for Docker deployments.
-- [Docker Security Cheat Sheet](https://www.linux.com/topic/security/docker-security-cheat-sheet/) - Summary of Docker security mitigations and operational practices.
-- [Container Security with AWS](https://aws.amazon.com/containers/security/) - AWS guidance for securing ECS and EKS environments.
+- [AWS EKS Runtime Security](https://docs.aws.amazon.com/eks/latest/best-practices/runtime-security.html) - AWS guidance for runtime protection of Kubernetes workloads on EKS.
 - [Google Kubernetes Engine (GKE) Security](https://cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster) - GKE cluster hardening guidance.
 - [Sigstore](https://sigstore.dev/) - Artifact signing and verification ecosystem increasingly used in container and Kubernetes pipelines.
 
@@ -164,7 +155,7 @@ Thanks to all [contributors](https://github.com/kayranfatih/awesome-embedded-lin
 - [OpenSSF](https://openssf.org/) - Security guidance and tooling around open source software supply chains.
 - [OWASP Internet of Things Project](https://owasp.org/www-project-internet-of-things/) - Security references relevant to connected and embedded devices.
 - [Linux Kernel Security Documentation](https://docs.kernel.org/security/index.html) - Primary source for current kernel security mechanisms and hardening features.
-- [Yocto Project Security Advisories](https://www.yoctoproject.org/security/) - Security notices and updates relevant to Yocto-based products.
+- [Yocto Project Security Manual](https://docs.yoctoproject.org/next/security-manual/index.html) - Official Yocto security guidance covering hardening, vulnerabilities, and reporting.
 - [PSA Certified](https://www.psacertified.org/) - Security framework and certification program for connected devices and platforms.
 - [NIST NVD](https://nvd.nist.gov/) - U.S. National Vulnerability Database for tracking CVEs.
 - [CISA Known Exploited Vulnerabilities Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) - Prioritization signal for actively exploited issues.
@@ -204,7 +195,7 @@ Thanks to all [contributors](https://github.com/kayranfatih/awesome-embedded-lin
   - Config option: `CONFIG_RANDOMIZE_BASE`
 - [Stack Canary](https://docs.kernel.org/security/self-protection.html#canaries-blinding-and-other-secrets) - Inserts a canary before return addresses to detect stack smashing.
   - Config option: `CONFIG_STACK_PROTECTOR`
-- [Control-Flow Integrity (CFI)](https://docs.kernel.org/dev-tools/llvm.html) - Clang-backed forward-edge control flow protection for supported kernel builds.
+- [Control-Flow Integrity (CFI)](https://clang.llvm.org/docs/ControlFlowIntegrity.html) - Clang-backed forward-edge control flow protection for supported user space and kernel-oriented toolchains.
 - [SLUB Allocator Heap Memory Security](https://events.static.linuxfound.org/sites/events/files/slides/slaballocators.pdf) - Notes on why SLUB is generally preferred over older slab allocators from a security perspective.
 - [Kernel Self-Protection Project (KSPP)](https://kspp.github.io/) - Community effort tracking hardening work across the Linux kernel.
 
@@ -212,8 +203,6 @@ Thanks to all [contributors](https://github.com/kayranfatih/awesome-embedded-lin
 Return-Oriented Programming (ROP) is an exploitation technique that chains together short code fragments called gadgets from existing program code. It is relevant both for offensive research and for understanding why modern mitigations matter.
 
 - [ROPgadget](https://github.com/JonathanSalwan/ROPgadget) - Command-line tool for finding gadgets and building ROP chains.
-- [ROPInjector](https://github.com/NytroRST/ROPInjector) - Tool for generating and injecting ROP payloads.
-- [ROPShell](https://github.com/alpha1ab/ROPShell) - Python script for helping build ROP-based exploits.
 - [RP++](https://github.com/0vercl0k/rp) - ROP gadget discovery tool for binaries.
 - [Ropper](https://github.com/sashs/ropper) - Gadget finder supporting x86, x86_64, ARM, ARM64, MIPS, PowerPC, and SPARC64.
 - [Pwntools](https://github.com/Gallopsled/pwntools) - Exploit development library and framework widely used in binary research.
@@ -236,18 +225,18 @@ Return-Oriented Programming (ROP) is an exploitation technique that chains toget
 - [fscrypt Documentation](https://docs.kernel.org/filesystems/fscrypt.html) - Official documentation for deploying fscrypt.
 - [Cryptsetup Repository](https://gitlab.com/cryptsetup/cryptsetup/) - User-space tooling for configuring dm-crypt.
 - [Android Security: File-Based Encryption](https://source.android.com/security/encryption/file-based) - Android usage of fscrypt for directory-level encryption.
-- [Chrome OS Security: Encrypted User Data](https://chromium.googlesource.com/chromiumos/docs/+/master/security/encrypted_user_data.md) - Overview of Chrome OS encrypted user data.
+- [Chrome OS Security Whitepaper](https://www.chromium.org/chromium-os/developer-library/reference/security/security-whitepaper/) - Official Chrome OS security overview covering encrypted user data, verified boot, and hardware root of trust.
 
 ### Considerations
 - **Integrity Protection**: dm-verity and fs-verity provide integrity checking, while dm-crypt and fscrypt focus on confidentiality.
 - **Metadata Encryption**: dm-crypt protects all block device metadata, while fscrypt primarily protects file contents and filenames.
 
 ## Hardening Yocto
-- [Yocto CVE Check Documentation](https://docs.yoctoproject.org/dev-manual/vulnerabilities.html) - Current Yocto documentation for vulnerability scanning and CVE workflows.
-- [Yocto Project Security Advisories](https://www.yoctoproject.org/security/) - Official security advisories and updates for the Yocto Project.
+- [Yocto CVE Check Documentation](https://docs.yoctoproject.org/5.3.1/dev-manual/vulnerabilities.html) - Current Yocto documentation for vulnerability scanning and CVE workflows.
+- [Yocto Project Security Manual](https://docs.yoctoproject.org/next/security-manual/index.html) - Official security manual for hardening, reporting vulnerabilities, and security processes.
 - [Yocto SBOM Generation](https://docs.yoctoproject.org/dev-manual/sbom.html) - Yocto documentation for SPDX-based software bill of materials generation.
 - [Securing Images in the Yocto Project](https://docs.yoctoproject.org/5.2.2/dev-manual/securing-images.html) - Current guidance on hardening images, security flags, and secure boot considerations.
-- [meta-security](https://github.com/openembedded/meta-security) - OpenEmbedded layer containing useful security packages and metadata for Yocto-based systems.
+- [meta-security](https://layers.openembedded.org/layerindex/branch/master/layer/meta-security/) - OpenEmbedded Layer Index entry for the security-focused Yocto layer and its maintained branches.
 
 ## Supply Chain Security and SBOM
 - [SPDX](https://spdx.dev/) - Standard for software bill of materials and license metadata exchange.
@@ -338,6 +327,5 @@ Lockdown disables or restricts access to several critical kernel interfaces and 
 ## Books
 - [Mastering Linux Security and Hardening](https://www.packtpub.com/product/mastering-linux-security-and-hardening-third-edition/9781837630516) - Linux hardening reference with practical coverage of kernel, services, and operational controls.
 - [Practical Linux Security Cookbook](https://www.amazon.de/Practical-Linux-Security-Cookbook-environment/dp/1789138396) - Practical recipes for securing Linux systems and services.
-- [Embedded Linux Systems with the Yocto Project](https://www.pearson.com/en-us/subject-catalog/p/embedded-linux-systems-with-the-yocto-project/P200000003188/9780133443240) - Good background for building maintainable embedded Linux systems that can then be hardened correctly.
+- [Embedded Linux Systems with the Yocto Project](https://www.amazon.de/-/en/Embedded-Systems-Project-Software-Development/dp/0133443248) - Good background for building maintainable embedded Linux systems that can then be hardened correctly.
 - [Practical Binary Analysis](https://nostarch.com/binaryanalysis) - Strong reverse engineering and firmware analysis foundation for offensive and defensive work.
-- [The Firmware Handbook](https://www.oreilly.com/library/view/the-firmware-handbook/9781098178864/) - Modern firmware engineering reference with security-relevant design and maintenance topics.
