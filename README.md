@@ -319,6 +319,7 @@ Static analysis examines source code or binaries without executing them. It help
 - [Semgrep](https://semgrep.dev/) - Fast, rule-based static analysis with custom pattern support for C and many other languages.
 - [CodeQL](https://codeql.github.com/) - Semantic code analysis engine that queries code as data to find vulnerability variants.
 - [Flawfinder](https://dwheeler.com/flawfinder/) - Simple scanner for potentially dangerous functions in C and C++ code.
+- [firmware-auditor](https://github.com/RichJJ98/firmware-auditor) - Zero-emulation static security analysis framework for unpacked embedded Linux rootfs with native SARIF output.
 - [Coccinelle](https://coccinelle.gitlabpages.inria.fr/website/) - Semantic patch tool used extensively in the Linux kernel to find and fix bug patterns.
 
 ### Dynamic Analysis
